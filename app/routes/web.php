@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('login', [LoginController::class, 'login'])->name('login');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
 Route::get('dashboard', [PageController::class, 'dashboard'])->name('dashboard');
 Route::get('sekolah-insert', [PageController::class, 'insertSekolah'])->name('sekolah.insert');
 Route::get('sekolah-update', [PageController::class, 'updateSekolah'])->name('sekolah.update');
+Route::get('tahun-ajaran', [PageController::class, 'tahunAjaran'])->name('tahun-ajaran');
