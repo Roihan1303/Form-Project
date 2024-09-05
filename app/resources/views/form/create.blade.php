@@ -6,6 +6,18 @@
             <form action="#">
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                     <div class="sm:col-span-2">
+                        <label for="jenjang" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Jenjang Sekolah/Madrasah
+                        </label>
+                        <select id="jenjang" name="jenjang"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>Pilih Jenjang Sekolah/Madrasah</option>
+                            <option value="1">SD/MI</option>
+                            <option value="2">SMP/MTs</option>
+                            <option value="3">SMA/SMK/MA</option>
+                        </select>
+                    </div>
+                    <div class="sm:col-span-2">
                         <label for="sekolah" class="block mb-2 text-sm font-medium text-gray-900">
                             Nama Sekolah/Madrasah
                         </label>
@@ -89,6 +101,30 @@
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Alamat Sekolah/Madrasah"></textarea>
                     </div>
+                    <div class="sm:col-span-2">
+                        <label for="con_guru" class="block mb-1 text-sm font-medium text-gray-900">
+                            Generate Admin Sekolah/Madrasah
+                        </label>
+                        <div class="py-4 px-3 border border-gray-300 text-gray-900 text-sm rounded-lg grid gap-4 sm:grid-cols-2 sm:gap-6"
+                            id="con_guru">
+                            <div class="sm:col-span-2">
+                                <label for="username" class="block mb-2 text-sm font-medium text-gray-900">
+                                    Username
+                                </label>
+                                <input type="text" name="username" id="username"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Username" required="">
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="password" class="block mb-2 text-sm font-medium text-gray-900">
+                                    Password
+                                </label>
+                                <input type="password" name="password" id="password"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Password" required="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <button type="submit"
                     class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
@@ -100,18 +136,18 @@
 
     <!-- action hidden file upload -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const yesRadio = document.getElementById('horizontal-list-radio-yes');
             const noRadio = document.getElementById('horizontal-list-radio-no');
             const uploadDiv = document.getElementById('upload-bphnu');
-    
-            yesRadio.addEventListener('change', function () {
+
+            yesRadio.addEventListener('change', function() {
                 if (this.checked) {
                     uploadDiv.classList.remove('hidden');
                 }
             });
-    
-            noRadio.addEventListener('change', function () {
+
+            noRadio.addEventListener('change', function() {
                 if (this.checked) {
                     uploadDiv.classList.add('hidden');
                 }

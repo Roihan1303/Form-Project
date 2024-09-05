@@ -9,7 +9,7 @@
                         <label for="sekolah" class="block mb-2 text-sm font-medium text-gray-900">
                             Pilih Sekolah/Madrasah
                         </label>
-                        <select id="sekolah" name="sejolah"
+                        <select id="sekolah" name="sekolah"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Pilih Sekolah/Madrasah</option>
                             <option value="US">United States</option>
@@ -22,17 +22,27 @@
                         <label for="tahun_ajaran" class="block mb-2 text-sm font-medium text-gray-900">
                             Tahun Ajaran
                         </label>
-                        <input type="number" name="tahun_ajaran" id="tahun_ajaran"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Tahun Ajaran" required="">
+                        <select id="tahun_ajaran" name="tahun_ajaran"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>Pilih Tahun Ajaran</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="FR">France</option>
+                            <option value="DE">Germany</option>
+                        </select>
                     </div>
                     <div class="w-full">
-                        <label for="nss" class="block mb-2 text-sm font-medium text-gray-900">
+                        <label for="akreditasi" class="block mb-2 text-sm font-medium text-gray-900">
                             Status Akreditasi
                         </label>
-                        <input type="number" name="nss" id="nss"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Status Akreditasi" required="">
+                        <select id="akreditasi" name="akreditasi"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>Pilih Status Akreditasi</option>
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                            <option value="4">D</option>
+                        </select>
                     </div>
                     <div class="sm:col-span-2">
                         <label for="jml_guru" class="block mb-1 text-sm font-medium text-gray-900">
@@ -181,6 +191,158 @@
                                 </div>
                             </li>
                         </ul>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="data-siswa" class="block mb-1 text-sm font-medium text-gray-900">
+                            Data Siswa
+                        </label>
+                        <div class="py-4 px-3 border border-gray-300 text-gray-900 text-sm rounded-lg grid gap-4 sm:grid-cols-2"
+                            id="data-siswa">
+                            <div class="sm:col-span-2">
+                                <label for="kls-1" class="block text-sm font-medium text-gray-900">
+                                    Kelas I
+                                </label>
+                                <div class="py-4  text-gray-900 text-sm rounded-lg grid gap-4 sm:grid-cols-2 sm:gap-6"
+                                    id="kls-1">
+                                    <div class="w-full">
+                                        <label for="lk1" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Laki Laki
+                                        </label>
+                                        <input type="number" name="lk1" id="lk1"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Laki Laki" required="">
+                                    </div>
+                                    <div class="w-full">
+                                        <label for="pr1" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Perempuan
+                                        </label>
+                                        <input type="number" name="pr1" id="pr1"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Perempuan" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="kls-2" class="block text-sm font-medium text-gray-900">
+                                    Kelas II
+                                </label>
+                                <div class="py-4  text-gray-900 text-sm rounded-lg grid gap-4 sm:grid-cols-2 sm:gap-6"
+                                    id="kls-2">
+                                    <div class="w-full">
+                                        <label for="lk2" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Laki Laki
+                                        </label>
+                                        <input type="number" name="lk2" id="lk2"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Laki Laki" required="">
+                                    </div>
+                                    <div class="w-full">
+                                        <label for="pr2" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Perempuan
+                                        </label>
+                                        <input type="number" name="pr2" id="pr2"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Perempuan" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="kls-3" class="block text-sm font-medium text-gray-900">
+                                    Kelas III
+                                </label>
+                                <div class="py-4  text-gray-900 text-sm rounded-lg grid gap-4 sm:grid-cols-2 sm:gap-6"
+                                    id="kls-3">
+                                    <div class="w-full">
+                                        <label for="lk3" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Laki Laki
+                                        </label>
+                                        <input type="number" name="lk3" id="lk3"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Laki Laki" required="">
+                                    </div>
+                                    <div class="w-full">
+                                        <label for="pr3" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Perempuan
+                                        </label>
+                                        <input type="number" name="pr3" id="pr3"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Perempuan" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="kls-4" class="block text-sm font-medium text-gray-900">
+                                    Kelas IV
+                                </label>
+                                <div class="py-4  text-gray-900 text-sm rounded-lg grid gap-4 sm:grid-cols-2 sm:gap-6"
+                                    id="kls-4">
+                                    <div class="w-full">
+                                        <label for="lk4" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Laki Laki
+                                        </label>
+                                        <input type="number" name="lk4" id="lk4"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Laki Laki" required="">
+                                    </div>
+                                    <div class="w-full">
+                                        <label for="pr4" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Perempuan
+                                        </label>
+                                        <input type="number" name="pr4" id="pr4"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Perempuan" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="kls-5" class="block text-sm font-medium text-gray-900">
+                                    Kelas V
+                                </label>
+                                <div class="py-4  text-gray-900 text-sm rounded-lg grid gap-4 sm:grid-cols-2 sm:gap-6"
+                                    id="kls-5">
+                                    <div class="w-full">
+                                        <label for="lk5" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Laki Laki
+                                        </label>
+                                        <input type="number" name="lk5" id="lk5"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Laki Laki" required="">
+                                    </div>
+                                    <div class="w-full">
+                                        <label for="pr5" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Perempuan
+                                        </label>
+                                        <input type="number" name="pr5" id="pr5"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Perempuan" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="kls-6" class="block text-sm font-medium text-gray-900">
+                                    Kelas VI
+                                </label>
+                                <div class="py-4  text-gray-900 text-sm rounded-lg grid gap-4 sm:grid-cols-2 sm:gap-6"
+                                    id="kls-6">
+                                    <div class="w-full">
+                                        <label for="lk6" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Laki Laki
+                                        </label>
+                                        <input type="number" name="lk6" id="lk6"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Laki Laki" required="">
+                                    </div>
+                                    <div class="w-full">
+                                        <label for="pr6" class="block mb-2 text-sm font-medium text-gray-900">
+                                            Siswa Perempuan
+                                        </label>
+                                        <input type="number" name="pr6" id="pr6"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Jumlah Siswa Perempuan" required="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <button type="submit"
