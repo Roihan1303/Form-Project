@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('profil_sekolah', function (Blueprint $table) {
             $table->id();
             $table->foreignId('sekolah_id')->constrained('sekolah')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('tahun_ajaran');
+            $table->foreignId('tahun_ajaran_id')->constrained('tahun_ajaran')->onDelete('cascade')->onUpdate('cascade');
             $table->string('status_akreditasi');
             $table->string('waktu_belajar');
             $table->string('nama_kepala_sekolah');

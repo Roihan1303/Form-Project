@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('sekolah', function (Blueprint $table) {
             $table->id();
             $table->string('nama_sekolah');
+            $table->string('jenjang');
             $table->date('tanggal_berdiri');
             $table->string('NSS');
             $table->string('NPSN');
