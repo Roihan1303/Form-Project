@@ -26,7 +26,7 @@
                                     No
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Color
+                                    Tahun Ajaran
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     <span class="sr-only">Edit</span>
@@ -34,19 +34,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr
-                                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                    1
-                                </th>
-                                <td class="px-6 py-4">
-                                    Silver
-                                </td>
-                                <td class="px-6 py-4 text-right">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                            </tr>
+                            @foreach ($data as $tahun)
+                                <tr
+                                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        {{ $loop->iteration }}
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        {{ $tahun->tahun }}
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="#"
+                                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -78,12 +80,14 @@
                 </div>
                 <!-- Modal body -->
                 <div class="p-4 md:p-5">
-                    <form class="flex flex-col gap-y-4 items-center" action="#">
+                    <form class="flex flex-col gap-y-4 items-center" action="{{ route('tahunAjaran.insert') }}"
+                        method="POST">
+                        @csrf
                         <div class="w-full mb-4">
                             <label for="tahun-ajaran" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                 Tahun Ajaran Baru
                             </label>
-                            <input type="text" name="" id="tahun-ajaran"
+                            <input type="text" name="tahun_ajaran" id="tahun-ajaran"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 placeholder="2024/2025" required />
                         </div>

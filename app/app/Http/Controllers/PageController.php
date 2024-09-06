@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TahunAjaran;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     //
-    
+
 
     public function dashboard()
     {
@@ -26,6 +27,7 @@ class PageController extends Controller
 
     public function tahunAjaran()
     {
-        return view('form.tahunAjaran');
+        $data = TahunAjaran::all();
+        return view('form.tahunAjaran', compact('data'));
     }
 }
