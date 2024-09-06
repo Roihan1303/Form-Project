@@ -75,7 +75,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('sekolah.insert') }}"
+                    <a href="{{ route('pendaftaranSekolah') }}"
                         class="flex items-center p-2 rounded-lg {{ request()->routeIs('sekolah.insert') ? 'bg-blue-600 text-gray-100' : 'hover:bg-blue-600 hover:text-gray-100' }} group">
                         <svg class="w-5 h-5 {{ request()->routeIs('sekolah.insert') ? 'text-white' : 'text-gray-500' }} transition duration-75 :text-gray-400 group-hover:text-gray-100"
                             {{-- <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" --}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -84,7 +84,7 @@
                                 d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM11 11H8V13H11V16H13V13H16V11H13V8H11V11Z">
                             </path>
                         </svg>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Insert</span>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Pendaftaran Sekolah</span>
                     </a>
                 </li>
                 <li>

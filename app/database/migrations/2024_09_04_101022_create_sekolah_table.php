@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('sekolah', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_sekolah');
+            $table->string('nama');
             $table->string('jenjang');
             $table->date('tanggal_berdiri');
             $table->string('NSS');
             $table->string('NPSN');
-            $table->string('telepon_sekolah');
-            $table->text('alamat_sekolah');
+            $table->string('telepon');
+            $table->text('alamat');
             $table->string('nama_yayasan');
             $table->boolean('sertifikat_BPHNU');
             $table->string('file_BPHNU')->nullable();

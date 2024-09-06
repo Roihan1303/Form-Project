@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Sekolah extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    protected $table = 'sekolah';
+    protected $fillable = [
+        'nama',
+        'jenjang',
+        'tanggal_berdiri',
+        'NSS',
+        'NPSN',
+        'telepon',
+        'alamat',
+        'nama_yayasan',
+        'sertifikat_BPHNU',
+        'file_BPHNU',
+    ];
 }

@@ -15,9 +15,9 @@ class PageController extends Controller
         return view('dashboard');
     }
 
-    public function insertSekolah()
+    public function pendaftaranSekolah()
     {
-        return view('form.create');
+        return view('form.pendaftaran');
     }
 
     public function updateSekolah()
