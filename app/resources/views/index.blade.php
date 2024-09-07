@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <section class="bg-gradient-to-br from-emerald-800 to-cyan-700">
+    <section class="bg-gradient-to-br from-emerald-800 to-cyan-700 h-screen flex items-center">
         <!-- Sign In -->
-        <div class="flex md:flex-row w-full md:max-w-6xl mx-auto h-screen md:py-20" id="sign-in">
+        <div class="flex md:flex-row w-full md:max-w-6xl mx-auto md:h-screen md:py-20 md:px-0 px-4" id="sign-in">
             <div class="bg-white w-1/2 rounded-s-xl p-4 md:flex hidden justify-center items-center">
                 <div class="bg-slate-200 w-full h-full rounded-lg flex md:flex-col gap-y-4 none">
                     <img class="md:h-[28rem]" src="{{ asset('assets/img/login.svg') }}" alt="">
@@ -23,8 +23,10 @@
                     </div>
                 </div>
             </div>
-            <div class="md:w-1/2 md:h-full flex flex-col items-center justify-center bg-white md:rounded-e-xl md:rounded-none rounded-xl px-4">
-                <p class="flex items-center mb-6 px-4 md:py-2 py-4 text-2xl font-semibold text-gray-900 text-center none-right">
+            <div
+                class="md:w-1/2 md:h-full flex flex-col items-center justify-center bg-white md:rounded-e-xl md:rounded-none rounded-xl md:px-4">
+                <p
+                    class="flex items-center md:mb-6 px-4 md:py-2 py-4 text-2xl font-semibold text-gray-900 text-center none-right">
                     Pendataan Sekolah/Madrasah LP Ma'arif NU
                     Kota Malang
                     2024
@@ -85,11 +87,13 @@
             </div>
         </div>
         <!-- Sign Up -->
-        <div class="flex md:flex-row w-full md:max-w-6xl mx-auto md:h-screen md:py-20 hidden" id="sign-up">
+        <div class="flex md:flex-row w-full md:max-w-6xl mx-auto md:h-screen md:py-20 md:px-0 px-4 hidden" id="sign-up">
             {{-- <div id="sign-up"
             class="flex md:flex-row w-full md:max-w-6xl mx-auto md:h-screen md:py-20 opacity-0 translate-x-full hidden transition-all duration-700 ease-in-out"> --}}
-            <div class="md:w-1/2 flex flex-col items-center justify-center bg-white rounded-s-xl px-4 ">
-                <p class="flex items-center mb-6 px-4 text-2xl font-semibold text-gray-900 text-center none">
+            <div
+                class="md:w-1/2 flex flex-col items-center justify-center bg-white md:rounded-s-xl md:rounded-none rounded-xl">
+                <p
+                    class="flex items-center md:mb-6 px-4 md:py-2 py-4 text-2xl font-semibold text-gray-900 text-center none-right">
                     Pendataan Sekolah/Madrasah LP Ma'arif NU
                     Kota Malang
                     2024
@@ -142,7 +146,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white w-1/2 rounded-e-xl p-4 flex justify-center items-center ">
+            <div class="bg-white w-1/2 rounded-e-xl p-4 md:flex hidden justify-center items-center">
                 <div class="bg-slate-200 w-full h-full rounded-lg flex md:flex-col gap-y-4 none-right">
                     <img class="md:h-[28rem]" src="{{ asset('assets/img/register.svg') }}" alt="">
                     <div class="bg-white md:w-full md:max-w-md mx-auto rounded-lg px-4 py-3">

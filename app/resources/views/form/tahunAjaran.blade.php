@@ -7,9 +7,9 @@
                 <h2 class="font-semibold text-3xl py-4">Tahun Ajaran</h2>
                 <div class="flex lg:flex-row justify-end py-4">
                     <button data-modal-target="add-tahun-ajaran" data-modal-toggle="add-tahun-ajaran"
-                        class="flex flex-row gap-x-2 items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
-                        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden="true">
+                        class="flex flex-row gap-x-2 items-center justify-center px-4 md:py-2 py-3 text-sm font-medium text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+                        <svg class="md:h-4 md:w-4 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path clip-rule="evenodd" fill-rule="evenodd"
                                 d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                         </svg>
@@ -18,8 +18,9 @@
                         </span>
                     </button>
                 </div>
-                <div class="w-full relative overflow-x-auto">
-                    <table id="tables" class="w-full text-sm text-left rtl:text-right text-gray-500 table-auto">
+                <div class="w-full relative overflow-hidden">
+                    <table id="tables"
+                        class="overflow-x-auto w-full text-sm text-left rtl:text-right text-gray-500 table-auto">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 ">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
