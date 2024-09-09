@@ -12,10 +12,9 @@
                         <select id="sekolah" name="sekolah"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Pilih Sekolah/Madrasah</option>
-                            <option value="US">United States</option>
-                            <option value="CA">Canada</option>
-                            <option value="FR">France</option>
-                            <option value="DE">Germany</option>
+                            @foreach ($sekolah as $items)
+                                <option value="{{ $items->id }}">{{ $items->nama }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="w-full">
@@ -25,10 +24,9 @@
                         <select id="tahun_ajaran" name="tahun_ajaran"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Pilih Tahun Ajaran</option>
-                            <option value="US">United States</option>
-                            <option value="CA">Canada</option>
-                            <option value="FR">France</option>
-                            <option value="DE">Germany</option>
+                            @foreach ($year as $years)
+                                <option value="{{ $years->id }}">{{ $years->tahun }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="w-full">
@@ -38,10 +36,10 @@
                         <select id="akreditasi" name="akreditasi"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Pilih Status Akreditasi</option>
-                            <option value="1">A</option>
-                            <option value="2">B</option>
-                            <option value="3">C</option>
-                            <option value="4">D</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
                         </select>
                     </div>
                     <div class="sm:col-span-2">

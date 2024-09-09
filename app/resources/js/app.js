@@ -1,6 +1,6 @@
 import './bootstrap';
 import 'flowbite';
-import { DataTable, exportCSV, exportTXT } from 'simple-datatables';
+import { DataTable } from 'simple-datatables';
 
 document.addEventListener("DOMContentLoaded", function () {
     const observer = new IntersectionObserver((entries) => {
@@ -30,8 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.DataTable = DataTable;
 
-
-const tables = new DataTable("#tables", {
-    searchable: true,
-    sortable: true,
-});
+const tables = document.getElementById('tables');
+if (tables) {
+    tables = new DataTable("#tables", {
+        searchable: true,
+        sortable: true,
+    });
+}

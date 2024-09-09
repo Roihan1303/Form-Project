@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sekolah;
 use App\Models\TahunAjaran;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,9 @@ class PageController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $sekolah = Sekolah::all();
+
+        return view('dashboard', compact('sekolah'));
     }
 
     public function pendaftaranSekolah()
@@ -22,7 +25,9 @@ class PageController extends Controller
 
     public function updateSekolah()
     {
-        return view('form.update');
+        $sekolah = Sekolah::all();
+        $year = TahunAjaran::orderBy('id', 'desc')->get();
+        return view('form.update', compact('sekolah', 'year'));
     }
 
     public function tahunAjaran()

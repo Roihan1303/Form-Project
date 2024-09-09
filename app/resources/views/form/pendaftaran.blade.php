@@ -27,6 +27,14 @@
                             placeholder="Nama Sekolah/Madrasah" required="">
                     </div>
                     <div class="w-full">
+                        <label for="tanggal_berdiri" class="block mb-2 text-sm font-medium text-gray-900">
+                            Tanggal Berdiri Sekolah
+                        </label>
+                        <input type="date" name="tanggal_berdiri" id="tanggal_berdiri"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            required="">
+                    </div>
+                    <div class="w-full">
                         <label for="nss" class="block mb-2 text-sm font-medium text-gray-900">
                             Nomor Statistik Sekolah/Madrasah
                         </label>
@@ -49,14 +57,6 @@
                         <input type="number" name="telepon" id="telepon"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Nomor Telepon Sekolah/Madrasah" required="">
-                    </div>
-                    <div class="w-full">
-                        <label for="tanggal_berdiri" class="block mb-2 text-sm font-medium text-gray-900">
-                            Tanggal Berdiri Sekolah
-                        </label>
-                        <input type="date" name="tanggal_berdiri" id="tanggal_berdiri"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            required="">
                     </div>
                     <div class="sm:col-span-2">
                         <label for="yayasan" class="block mb-2 text-sm font-medium text-gray-900">
