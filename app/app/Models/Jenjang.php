@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TahunAjaran extends Model
+class Jenjang extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'tahun_ajaran';
+    protected $table = 'jenjang';
     protected $fillable = [
-        'tahun',
-        'active'
+        'jenjang'
     ];
 }

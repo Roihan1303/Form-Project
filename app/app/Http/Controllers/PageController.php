@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jenjang;
 use App\Models\Sekolah;
 use App\Models\TahunAjaran;
 use Illuminate\Http\Request;
@@ -30,7 +31,8 @@ class PageController extends Controller
 
     public function pendaftaranSekolah()
     {
-        return view('form.pendaftaran');
+        $jenjang = Jenjang::all();
+        return view('form.pendaftaran', compact('jenjang'));
     }
 
     public function updateSekolah()

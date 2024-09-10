@@ -13,9 +13,9 @@
                         <select id="jenjang" name="jenjang"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Pilih Jenjang Sekolah/Madrasah</option>
-                            <option value="SD/MI">SD/MI</option>
-                            <option value="SMP/MTs">SMP/MTs</option>
-                            <option value="SMA/SMK/MA">SMA/SMK/MA</option>
+                            @foreach ($jenjang as $jenjang)
+                                <option value="{{ $jenjang->id }}">{{ $jenjang->jenjang }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="sm:col-span-2">
@@ -122,11 +122,11 @@
                             id="con_guru">
                             <div class="sm:col-span-2">
                                 <label for="username" class="block mb-2 text-sm font-medium text-gray-900">
-                                    Username
+                                    Email/Username
                                 </label>
                                 <input type="text" name="username" id="username"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Username">
+                                    placeholder="Email/Username" required>
                             </div>
                             <div class="sm:col-span-2">
                                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900">
@@ -134,7 +134,7 @@
                                 </label>
                                 <input type="password" name="password" id="password"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Password">
+                                    placeholder="Password" required>
                             </div>
                         </div>
                     </div>
