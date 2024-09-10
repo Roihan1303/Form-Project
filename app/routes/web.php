@@ -25,6 +25,9 @@ Route::get('login', [LoginController::class, 'login'])->name('login');
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('dashboard', [PageController::class, 'dashboard'])->name('dashboard');
+Route::get('by-jenjang', [PageController::class, 'byJenjang'])->name('jenjang');
+Route::get('by-sekolah', [PageController::class, 'bySekolah'])->name('sekolah');
+
 Route::get('pendaftaran-sekolah', [PageController::class, 'pendaftaranSekolah'])->name('pendaftaranSekolah');
 Route::get('sekolah-update', [PageController::class, 'updateSekolah'])->name('sekolah.update');
 Route::get('tahun-ajaran', [PageController::class, 'tahunAjaran'])->name('tahun-ajaran');

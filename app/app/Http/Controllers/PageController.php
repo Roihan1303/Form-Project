@@ -18,6 +18,16 @@ class PageController extends Controller
         return view('dashboard', compact('sekolah'));
     }
 
+    public function byJenjang()
+    {
+        return view('byJenjang');
+    }
+
+    public function bySekolah()
+    {
+        return view('bySekolah');
+    }
+
     public function pendaftaranSekolah()
     {
         return view('form.pendaftaran');
