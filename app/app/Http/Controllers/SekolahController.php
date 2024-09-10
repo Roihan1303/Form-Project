@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sekolah;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class SekolahController extends Controller
 {
@@ -11,7 +13,7 @@ class SekolahController extends Controller
     {
         $sekolah = new Sekolah();
         $sekolah->nama = $request->nama_sekolah;
-        $sekolah->jenjang = $request->jenjang;
+        $sekolah->jenjang_id = $request->jenjang;
         $sekolah->tanggal_berdiri = $request->tanggal_berdiri;
         $sekolah->NSS = $request->nss;
         $sekolah->NPSN = $request->npsn;
@@ -31,6 +33,13 @@ class SekolahController extends Controller
             $sekolah->file_BPHNU = null;
             $sekolah->save();
         }
+
+        User::create([
+            'name' => $request->nama_sekolah,
+            'email' => $request->username,
+            'password' => Hash::make($request->password),
+            'jenjang_id' => $request->jenjang
+        ]);
 
         return redirect()->back();
     }

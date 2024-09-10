@@ -9,7 +9,7 @@ class TahunAjaranController extends Controller
 {
     public function insertTahun(Request $request)
     {
-        TahunAjaran::create(['tahun' => $request->tahun_ajaran]);
+        TahunAjaran::create(['tahun' => $request->tahun_ajaran, 'active' => 0]);
 
         return redirect()->back();
     }
