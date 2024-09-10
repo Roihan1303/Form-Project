@@ -12,7 +12,7 @@ class Sekolah extends Model
     protected $table = 'sekolah';
     protected $fillable = [
         'nama',
-        'jenjang',
+        'jenjang_id',
         'tanggal_berdiri',
         'NSS',
         'NPSN',
