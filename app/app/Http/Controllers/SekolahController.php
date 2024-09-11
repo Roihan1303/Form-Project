@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guru;
+use App\Models\ProfilSekolah;
 use App\Models\Sekolah;
+use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -38,8 +41,60 @@ class SekolahController extends Controller
             'name' => $request->nama_sekolah,
             'email' => $request->username,
             'password' => Hash::make($request->password),
-            'jenjang_id' => $request->jenjang
+            'sekolah_id' => $sekolah->id
         ]);
+
+        return redirect()->back();
+    }
+
+    public function pendataanSekolah(Request $request)
+    {
+        $sekolahId = auth()->user()->sekolah->id;
+
+        $profilSekolah = ProfilSekolah::create([
+            'sekolah_id' => $sekolahId,
+            'tahun_ajaran_id' => $request->tahun_ajaran,
+            'status_akreditasi' => $request->akreditasi,
+            'waktu_belajar' => $request->waktu_belajar,
+            'nama_kepala_sekolah' => $request->kepala_sekolah,
+            'nama_ketua_yayasan' => $request->ketua_yayasan,
+            'kurikulum' => $request->kurikulum,
+        ]);
+
+        Guru::create([
+            'profil_sekolah_id' => $profilSekolah->id,
+            'S1' => $request->guru_s1,
+            'S2' => $request->guru_s2,
+            'non_gelar' => $request->guru_nonGelar,
+            'pns' => $request->guru_pns,
+            'bantu' => $request->guru_bantu,
+            'yayasan' => $request->guru_yys,
+            'honorer' => $request->guru_hon,
+        ]);
+
+        $jenjangId = auth()->user()->sekolah->jenjang_id;
+
+        if ($jenjangId == 1) {
+            $kelas = ['I', 'II', 'III', 'IV', 'V', 'VI'];
+        } elseif ($jenjangId == 2) {
+            $kelas = ['VII', 'VIII', 'IX'];
+        } else {
+            $kelas = ['X', 'XI', 'XII'];
+        }
+
+        foreach ($kelas as $key => $value) {
+            $siswaLaki = $request->laki[$key];
+            $siswaPerempuan = $request->perempuan[$key];
+            $jumlahSiswa = $siswaLaki + $siswaPerempuan;
+
+            Siswa::create([
+                'profil_sekolah_id' => $profilSekolah->id,
+                'kelas' => 'Kelas ' . $value,
+                'laki' => $siswaLaki,
+                'perempuan' => $siswaPerempuan,
+                'jumlah' => $jumlahSiswa,
+            ]);
+        }
 
         return redirect()->back();
     }

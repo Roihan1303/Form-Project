@@ -30,7 +30,7 @@
                                     Tahun Ajaran
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    <span class="sr-only">Edit</span>
+                                    Status
                                 </th>
                             </tr>
                         </thead>
@@ -45,8 +45,19 @@
                                         {{ $tahun->tahun }}
                                     </td>
                                     <td class="px-6 py-4 text-right">
-                                        <a href="#"
-                                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        <form action="{{ route('tahunAjaran.setStatus', ['tahun' => $tahun->id]) }}"
+                                            method="POST">
+                                            @csrf
+                                            @if ($tahun->status == 1)
+                                                <button type="submit"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                    disabled>Active</button>
+                                            @else
+                                                <button type="submit"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Set
+                                                    Active</button>
+                                            @endif
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

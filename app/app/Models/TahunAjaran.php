@@ -12,6 +12,11 @@ class TahunAjaran extends Model
     protected $table = 'tahun_ajaran';
     protected $fillable = [
         'tahun',
-        'active'
+        'status'
     ];
+
+    public function profil_sekolah()
+    {
+        return $this->hasMany(TahunAjaran::class);
+    }
 }

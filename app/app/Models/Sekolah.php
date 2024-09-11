@@ -22,4 +22,19 @@ class Sekolah extends Model
         'sertifikat_BPHNU',
         'file_BPHNU',
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
+    public function jenjang()
+    {
+        return $this->belongsTo(Jenjang::class);
+    }
+
+    public function profil_sekolah()
+    {
+        return $this->hasMany(ProfilSekolah::class);
+    }
 }

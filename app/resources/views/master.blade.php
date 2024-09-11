@@ -74,45 +74,46 @@
                         <span class="ms-3">Dashboard</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('pendaftaranSekolah') }}"
-                        class="flex items-center p-2 rounded-lg {{ request()->routeIs('sekolah.insert') ? 'bg-blue-600 text-gray-100' : 'hover:bg-blue-600 hover:text-gray-100' }} group">
-                        <svg class="w-5 h-5 {{ request()->routeIs('sekolah.insert') ? 'text-white' : 'text-gray-500' }} transition duration-75 :text-gray-400 group-hover:text-gray-100"
-                            {{-- <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" --}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path
-                                d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM11 11H8V13H11V16H13V13H16V11H13V8H11V11Z">
-                            </path>
-                        </svg>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Pendaftaran Sekolah</span>
-                    </a>
-                </li>
-                @if (auth()->user()->jenjang_id != null)
+                @if (auth()->user()->sekolah_id == null)
                     <li>
-                        <a href="{{ route('sekolah.update') }}"
-                            class="flex items-center p-2 rounded-lg {{ request()->routeIs('sekolah.update') ? 'bg-blue-600 text-gray-100' : 'hover:bg-blue-600 hover:text-gray-100' }} group">
-                            <svg class="w-5 h-5 {{ request()->routeIs('sekolah.update') ? 'text-white' : 'text-gray-500' }} transition duration-75 :text-gray-400 group-hover:text-gray-100"
+                        <a href="{{ route('tahun-ajaran') }}"
+                            class="flex items-center p-2 rounded-lg {{ request()->routeIs('tahun-ajaran') ? 'bg-blue-600 text-gray-100' : 'hover:bg-blue-600 hover:text-gray-100' }} group">
+                            <svg class="w-5 h-5 {{ request()->routeIs('tahun-ajaran') ? 'text-white' : 'text-gray-500' }} transition duration-75 :text-gray-400 group-hover:text-gray-100"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 2C21.6569 2 23 3.34315 23 5V7H21V19C21 20.6569 19.6569 22 18 22H4C2.34315 22 1 20.6569 1 19V17H17V19C17 19.5128 17.386 19.9355 17.8834 19.9933L18 20C18.5128 20 18.9355 19.614 18.9933 19.1166L19 19V15H3V5C3 3.34315 4.34315 2 6 2H20Z">
+                                </path>
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Tahun Ajaran</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('pendaftaranSekolah') }}"
+                            class="flex items-center p-2 rounded-lg {{ request()->routeIs('sekolah.insert') ? 'bg-blue-600 text-gray-100' : 'hover:bg-blue-600 hover:text-gray-100' }} group">
+                            <svg class="w-5 h-5 {{ request()->routeIs('sekolah.insert') ? 'text-white' : 'text-gray-500' }} transition duration-75 :text-gray-400 group-hover:text-gray-100"
+                                {{-- <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" --}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M16 2L21 7V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16ZM11 11H8V13H11V16H13V13H16V11H13V8H11V11Z">
+                                </path>
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Pendaftaran Sekolah</span>
+                        </a>
+                    </li>
+                @else
+                    <li>
+                        <a href="{{ route('pendataanSekolah') }}"
+                            class="flex items-center p-2 rounded-lg {{ request()->routeIs('pendataanSekolah') ? 'bg-blue-600 text-gray-100' : 'hover:bg-blue-600 hover:text-gray-100' }} group">
+                            <svg class="w-5 h-5 {{ request()->routeIs('pendataanSekolah') ? 'text-white' : 'text-gray-500' }} transition duration-75 :text-gray-400 group-hover:text-gray-100"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M20 2C20.5523 2 21 2.44772 21 3V6.757L12.0012 15.7562L11.995 19.995L16.2414 20.0012L21 15.242V21C21 21.5523 20.5523 22 20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20ZM21.7782 8.80761L23.1924 10.2218L15.4142 18L13.9979 17.9979L14 16.5858L21.7782 8.80761ZM12 12H7V14H12V12ZM15 8H7V10H15V8Z">
                                 </path>
                             </svg>
-                            <span class="flex-1 ms-3 whitespace-nowrap">Update</span>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Pendataan Sekolah</span>
                         </a>
                     </li>
                 @endif
-                <li>
-                    <a href="{{ route('tahun-ajaran') }}"
-                        class="flex items-center p-2 rounded-lg {{ request()->routeIs('tahun-ajaran') ? 'bg-blue-600 text-gray-100' : 'hover:bg-blue-600 hover:text-gray-100' }} group">
-                        <svg class="w-5 h-5 {{ request()->routeIs('tahun-ajaran') ? 'text-white' : 'text-gray-500' }} transition duration-75 :text-gray-400 group-hover:text-gray-100"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20 2C21.6569 2 23 3.34315 23 5V7H21V19C21 20.6569 19.6569 22 18 22H4C2.34315 22 1 20.6569 1 19V17H17V19C17 19.5128 17.386 19.9355 17.8834 19.9933L18 20C18.5128 20 18.9355 19.614 18.9933 19.1166L19 19V15H3V5C3 3.34315 4.34315 2 6 2H20Z">
-                            </path>
-                        </svg>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Tahun Ajaran</span>
-                    </a>
-                </li>
                 <li>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf

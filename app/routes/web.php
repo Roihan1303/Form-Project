@@ -26,9 +26,11 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('dashboard', [PageController::class, 'dashboard'])->name('dashboard');
 Route::get('pendaftaran-sekolah', [PageController::class, 'pendaftaranSekolah'])->name('pendaftaranSekolah');
-Route::get('sekolah-update', [PageController::class, 'updateSekolah'])->name('sekolah.update');
+Route::get('pendataan-sekolah', [PageController::class, 'pendataanSekolah'])->name('pendataanSekolah');
 Route::get('tahun-ajaran', [PageController::class, 'tahunAjaran'])->name('tahun-ajaran');
 
 Route::post('tahun-ajaran', [TahunAjaranController::class, 'insertTahun'])->name('tahunAjaran.insert');
+Route::post('set-tahun-ajaran/{tahun}', [TahunAjaranController::class, 'setStatus'])->name('tahunAjaran.setStatus');
 
 Route::post('pendaftaran-sekolah', [SekolahController::class, 'pendaftaranSekolah'])->name('pendaftaranSekolah.create');
+Route::post('pendataan-sekolah', [SekolahController::class, 'pendataanSekolah'])->name('pendataanSekolah.create');

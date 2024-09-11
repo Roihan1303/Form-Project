@@ -25,11 +25,10 @@ class PageController extends Controller
         return view('form.pendaftaran', compact('jenjang'));
     }
 
-    public function updateSekolah()
+    public function pendataanSekolah()
     {
-        $sekolah = Sekolah::all();
-        $year = TahunAjaran::orderBy('id', 'desc')->get();
-        return view('form.update', compact('sekolah', 'year'));
+        $year = TahunAjaran::where('status', 1)->first();
+        return view('form.pendataan', compact('year'));
     }
 
     public function tahunAjaran()
