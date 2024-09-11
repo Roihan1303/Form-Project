@@ -168,7 +168,7 @@ if (document.getElementById("guru-keadaan") && typeof ApexCharts !== 'undefined'
 }
 
 
-const options = {
+const getJmlSiswa = {
     colors: ["#1A56DB", "#FDBA8C"],
     series: [
         {
@@ -272,7 +272,7 @@ const options = {
 }
 
 if (document.getElementById("siswa-chart") && typeof ApexCharts !== 'undefined') {
-    const chart = new ApexCharts(document.getElementById("siswa-chart"), options);
+    const chart = new ApexCharts(document.getElementById("siswa-chart"), getJmlSiswa);
     chart.render();
 }
 
