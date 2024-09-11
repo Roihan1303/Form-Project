@@ -19,6 +19,11 @@ class PageController extends Controller
         return view('dashboard', compact('sekolah'));
     }
 
+    public function profile()
+    {
+        return view('profile');
+    }
+
     public function byJenjang()
     {
         return view('byJenjang');

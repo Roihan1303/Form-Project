@@ -11,7 +11,7 @@
                             Jenjang Sekolah/Madrasah
                         </label>
                         <select id="jenjang" name="jenjang"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                             <option selected>Pilih Jenjang Sekolah/Madrasah</option>
                             @foreach ($jenjang as $jenjang)
                                 <option value="{{ $jenjang->id }}">{{ $jenjang->jenjang }}</option>
@@ -19,11 +19,11 @@
                         </select>
                     </div>
                     <div class="sm:col-span-2">
-                        <label for="sekolah" class="block mb-2 text-sm font-medium text-gray-900">
+                        <label for="school" class="block mb-2 text-sm font-medium text-gray-900">
                             Nama Sekolah/Madrasah
                         </label>
-                        <input type="text" name="nama_sekolah" id="sekolah"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        <input type="text" name="nama_sekolah" id="school"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
                             placeholder="Nama Sekolah/Madrasah" required="">
                     </div>
                     <div class="w-full">
@@ -31,7 +31,7 @@
                             Tanggal Berdiri Sekolah
                         </label>
                         <input type="date" name="tanggal_berdiri" id="tanggal_berdiri"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
                             required="">
                     </div>
                     <div class="w-full">
@@ -39,7 +39,7 @@
                             Nomor Statistik Sekolah/Madrasah
                         </label>
                         <input type="number" name="nss" id="nss"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
                             placeholder="Nomor Statistik Sekolah/Madrasah" required="">
                     </div>
                     <div class="w-full">
@@ -47,7 +47,7 @@
                             Nomor Pokok Sekolah/Madrasah Nasional
                         </label>
                         <input type="number" name="npsn" id="npsn"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
                             placeholder="Nomor Pokok Sekolah/Madrasah Nasional" required="">
                     </div>
                     <div class="w-full">
@@ -55,7 +55,7 @@
                             Nomor Telepon Sekolah/Madrasah
                         </label>
                         <input type="number" name="telepon" id="telepon"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
                             placeholder="Nomor Telepon Sekolah/Madrasah" required="">
                     </div>
                     <div class="sm:col-span-2">
@@ -63,7 +63,7 @@
                             Nama Yayasan Sekolah/Madrasah
                         </label>
                         <input type="text" name="yayasan" id="yayasan"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
                             placeholder="Nama Yayasan Sekolah/Madrasah" required="">
                     </div>
                     <div class="sm:col-span-2">
@@ -111,12 +111,21 @@
                             Alamat Sekolah/Madrasah
                         </label>
                         <textarea id="alamat" rows="8" name="alamat"
-                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                             placeholder="Alamat Sekolah/Madrasah" required></textarea>
                     </div>
                     <div class="sm:col-span-2">
-                        <label for="con_guru" class="block mb-1 text-sm font-medium text-gray-900">
+                        <label for="con_guru"
+                            class="inline-flex items-center gap-x-2 mb-1 text-sm font-medium text-gray-900">
                             Generate Admin Sekolah/Madrasah
+                            <button type="button">
+                                <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M10.313 11.5656L18.253 3.62561L20.3744 5.74693L18.9602 7.16114L21.0815 9.28246L17.5459 12.818L15.4246 10.6967L12.4343 13.687C13.4182 15.5719 13.1186 17.9524 11.5355 19.5355C9.58291 21.4881 6.41709 21.4881 4.46447 19.5355C2.51184 17.5829 2.51184 14.4171 4.46447 12.4644C6.04755 10.8814 8.42809 10.5818 10.313 11.5656ZM9.41421 17.4142C10.1953 16.6331 10.1953 15.3668 9.41421 14.5858C8.63316 13.8047 7.36684 13.8047 6.58579 14.5858C5.80474 15.3668 5.80474 16.6331 6.58579 17.4142C7.36684 18.1952 8.63316 18.1952 9.41421 17.4142Z">
+                                    </path>
+                                </svg>
+                            </button>
                         </label>
                         <div class="py-4 px-3 border border-gray-300 text-gray-900 text-sm rounded-lg grid gap-4 sm:grid-cols-2 sm:gap-6"
                             id="con_guru">
@@ -125,7 +134,7 @@
                                     Email/Username
                                 </label>
                                 <input type="text" name="username" id="username"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
                                     placeholder="Email/Username" required>
                             </div>
                             <div class="sm:col-span-2">
@@ -133,7 +142,7 @@
                                     Password
                                 </label>
                                 <input type="password" name="password" id="password"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
                                     placeholder="Password" required>
                             </div>
                         </div>

@@ -46,6 +46,7 @@
             </nav>
         </section>
     </section>
+    <!-- Content -->
     <section>
         <div class="w-full bg-white rounded-lg px-4 py-3">
             <h2 class="font-semibold md:text-3xl md:ps-4 mb-4">
@@ -58,7 +59,8 @@
                 </span>
             </h2>
             <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-                <div class="w-full border grid grid-cols-1 rounded-sm">
+                <!-- Left -->
+                <div class="w-full border grid grid-cols-1 rounded-md">
                     <div class="inline-flex px-4 py-3 gap-x-2" title="Alamat Sekolah/Madrasah">
                         <svg class="w-6 h-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="currentColor">
@@ -150,7 +152,8 @@
                         </span>
                     </div>
                 </div>
-                <div class="w-full border grid grid-cols-1 rounded-sm">
+                <!-- Right -->
+                <div class="w-full border grid grid-cols-1 rounded-md">
                     <div class="inline-flex px-4 py-3 gap-x-2" title="Yayasan Sekolah/Madrasah">
                         <svg class="w-6 h-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="currentColor">

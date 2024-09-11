@@ -40,18 +40,18 @@
                         <form class="space-y-4 md:space-y-6" action="{{ route('login') }}" method="POST">
                             @csrf
                             <div>
-                                <label for="email"
+                                <label for="log-email"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                     Email Address
                                 </label>
-                                <input type="text" name="email" id="email"
+                                <input type="text" name="email" id="log-email"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Masukkan Email Anda" required>
                             </div>
                             <div>
-                                <label for="password"
+                                <label for="log-password"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                                <input type="password" name="password" id="password" placeholder="••••••••"
+                                <input type="password" name="password" id="log-password" placeholder="••••••••"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     required>
                             </div>
@@ -88,10 +88,8 @@
             </div>
         </div>
         <!-- Sign Up -->
-        <div class="flex md:flex-row w-full md:max-w-6xl mx-auto md:h-screen md:py-20 md:px-0 px-4 hidden"
+        <div class="flex sm:flex-row w-full md:max-w-6xl mx-auto md:h-screen md:py-20 md:px-0 px-4 hidden"
             id="sign-up">
-            {{-- <div id="sign-up"
-            class="flex md:flex-row w-full md:max-w-6xl mx-auto md:h-screen md:py-20 opacity-0 translate-x-full hidden transition-all duration-700 ease-in-out"> --}}
             <div
                 class="md:w-1/2 flex flex-col items-center justify-center bg-white md:rounded-s-xl md:rounded-none rounded-xl">
                 <p
@@ -123,10 +121,10 @@
                                     required="">
                             </div>
                             <div>
-                                <label for="password"
+                                <label for="repeat-password"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Repeat Your
                                     Password</label>
-                                <input type="password" name="password" id="password" placeholder="••••••••"
+                                <input type="password" name="password" id="repeat-password" placeholder="••••••••"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     required="">
                             </div>

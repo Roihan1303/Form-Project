@@ -276,3 +276,66 @@ if (document.getElementById("siswa-chart") && typeof ApexCharts !== 'undefined')
     chart.render();
 }
 
+
+const all = () => {
+    return {
+        series: [52.8, 26.8, 20.4],
+        colors: ["#1C64F2", "#16BDCA", "#9061F9"],
+        chart: {
+            height: 420,
+            width: "100%",
+            type: "pie",
+        },
+        stroke: {
+            colors: ["white"],
+            lineCap: "",
+        },
+        plotOptions: {
+            pie: {
+                labels: {
+                    show: true,
+                },
+                size: "100%",
+                dataLabels: {
+                    offset: -25
+                }
+            },
+        },
+        labels: ["SD/MI", "SMP/MTs", "SMA/SMK/MA"],
+        dataLabels: {
+            enabled: true,
+            style: {
+                fontFamily: "Plus Jakarta Sans, sans-serif",
+            },
+        },
+        legend: {
+            position: "bottom",
+            fontFamily: "Plus Jakarta Sans, sans-serif",
+        },
+        yaxis: {
+            labels: {
+                formatter: function (value) {
+                    return value + "%"
+                },
+            },
+        },
+        xaxis: {
+            labels: {
+                formatter: function (value) {
+                    return value + "%"
+                },
+            },
+            axisTicks: {
+                show: false,
+            },
+            axisBorder: {
+                show: false,
+            },
+        },
+    }
+}
+
+if (document.getElementById("sekolah") && typeof ApexCharts !== 'undefined') {
+    const chart = new ApexCharts(document.getElementById("sekolah"), all());
+    chart.render();
+}
