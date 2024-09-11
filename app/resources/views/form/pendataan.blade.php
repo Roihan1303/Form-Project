@@ -1,16 +1,33 @@
 @extends('master')
 @section('content')
     <section class="bg-white rounded-lg">
-        <div class="px-4 py-2 mx-auto max-w-2xl md:py-16">
-            <h2 class="mb-4 text-xl font-bold text-gray-900">Pendataan Sekolah/Madrasah</h2>
+        <div class="px-4 py-2 mx-auto max-w-2xl md:py-6 space-y-10">
+            <!-- Alert -->
+            <div class="w-full bg-sky-100 mx-auto py-3 px-4 mb-5 rounded-lg">
+                <p class="font-medium text-lg text-red-600 text-center">
+                    *Data
+                    <span class="text-nowrap">
+                        {{ auth()->user()->sekolah->nama }}
+                    </span>
+                    Tahun Ajaran
+                    <span class="text-nowrap">
+                        {{ $year->tahun }}
+                    </span>
+                    telah dikumpulkan!
+                </p>
+            </div>
+            <!-- Form -->
+            <h2 class="mb-4 text-xl font-bold text-gray-900">
+                Pendataan Sekolah/Madrasah
+            </h2>
             <form action="{{ route('pendataanSekolah.create') }}" method="POST">
                 @csrf
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                     <div class="sm:col-span-2">
-                        <label for="sekolah" class="block mb-2 text-sm font-medium text-gray-900">
+                        <label for="school" class="block mb-2 text-sm font-medium text-gray-900">
                             Pilih Sekolah/Madrasah
                         </label>
-                        <input type="text" name="sekolah" id="sekolah"
+                        <input type="text" name="sekolah" id="school"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             value="{{ auth()->user()->sekolah->nama }}" readonly>
                     </div>

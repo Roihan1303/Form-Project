@@ -51,15 +51,12 @@
                             class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Flowbite</span>
                     </a>
                 </div>
-                <div class="flex items-center">
+                {{-- <div class="flex items-center">
                     <div class="flex items-center ms-3">
                         <div>
                             <button type="button" class="flex text-sm rounded-full focus:ring-4 focus:ring-white"
                                 aria-expanded="false" data-dropdown-toggle="dropdown-user">
                                 <span class="sr-only">Open user menu</span>
-                                {{-- <img class="w-8 h-8 rounded-full"
-                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                                    alt="user photo"> --}}
                                 <svg class="w-8 h-8 bg-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     fill="currentColor">
                                     <path
@@ -87,7 +84,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </nav>
@@ -147,6 +144,18 @@
                                 </path>
                             </svg>
                             <span class="flex-1 ms-3 whitespace-nowrap">Pendataan Sekolah</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('profile') }}"
+                            class="flex items-center p-2 rounded-lg {{ request()->routeIs('profile') ? 'bg-blue-600 text-gray-100' : 'hover:bg-blue-600 hover:text-gray-100' }} group">
+                            <svg class="w-5 h-5 {{ request()->routeIs('profile') ? 'text-white' : 'text-gray-500' }} transition duration-75 :text-gray-400 group-hover:text-gray-100"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M3 4.99509C3 3.89323 3.89262 3 4.99509 3H19.0049C20.1068 3 21 3.89262 21 4.99509V19.0049C21 20.1068 20.1074 21 19.0049 21H4.99509C3.89323 21 3 20.1074 3 19.0049V4.99509ZM6.35687 18H17.8475C16.5825 16.1865 14.4809 15 12.1022 15C9.72344 15 7.62182 16.1865 6.35687 18ZM12 13C13.933 13 15.5 11.433 15.5 9.5C15.5 7.567 13.933 6 12 6C10.067 6 8.5 7.567 8.5 9.5C8.5 11.433 10.067 13 12 13Z">
+                                </path>
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Profil Akun</span>
                         </a>
                     </li>
                 @endif
