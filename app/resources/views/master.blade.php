@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <title>Document</title>
     <style>
@@ -191,7 +193,25 @@
 
         </span>
     </footer>
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                title: "Success",
+                text: "{{ session('success') }}",
+                icon: "success",
+            });
+        </script>
+    @endif
 
+    @if (session('error'))
+        <script>
+            Swal.fire({
+                title: "Error",
+                text: "{{ session('error') }}",
+                icon: "error",
+            });
+        </script>
+    @endif
 </body>
 
 </html>

@@ -30,13 +30,22 @@
                 <div class="relative w-full">
                     <div
                         class="flex md:flex-row flex-col gap-y-4 md:justify-between md:items-center bg-gradient-to-r from-sky-500 to-violet-500 px-4 py-3 rounded-lg">
-                        <div>
+                        <div class="space-y-1">
                             <h2 class="font-semibold text-4xl text-white">
                                 <span class="text-nowrap">
                                     Selamat Datang,
                                 </span>
                                 {{ auth()->user()->name }}👋
                             </h2>
+                            @if (auth()->user()->sekolah_id == null)
+                            @else
+                                <p class="text-white font-medium text-lg">
+                                    Tahun Ajaran 
+                                    <span class="font-semibold">
+                                        {{ $current_year->tahun }}
+                                    </span>
+                                </p>
+                            @endif
                             <p class="text-white font-medium text-lg">
                                 Kelola Administrasi Sekolah dan Madrasah Anda Disini!
                             </p>
@@ -151,6 +160,23 @@
                     <!-- Admin Sekolah -->
                     <section>
                         <div class="w-full bg-white rounded-lg px-0 py-3">
+                            <div class="mb-4 w-full">
+                                <form action="" class="w-full mb-0">
+                                    <div class="flex flex-row gap-x-4 justify-start">
+                                        <select id="" name="tahun_ajaran"
+                                            class="bg-gray-50 border md:w-72 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                            <option selected>Pilih Tahun Ajaran</option>
+                                            @foreach ($year as $years)
+                                                <option value="{{ $years->id }}">{{ $years->tahun }}</option>
+                                            @endforeach
+                                        </select>
+                                        <button type="submit"
+                                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 focus:outline-none">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                             <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
                                 <!-- Left -->
                                 <div class="w-full border grid grid-cols-1 rounded-md">
@@ -198,11 +224,11 @@
                                             Abah Zaidan Karim Aljaber
                                         </span>
                                     </div>
-                                    <div class="inline-flex px-4 py-3 gap-x-2" title="Kepala Sekolah/Madrasah">
+                                    <div class="inline-flex px-4 py-3 gap-x-2" title="Akreditasi Sekolah/Madrasah">
                                         <svg class="w-6 h-6 text-slate-400" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 24 24" fill="currentColor">
                                             <path
-                                                d="M17 15.2454V22.1169C17 22.393 16.7761 22.617 16.5 22.617C16.4094 22.617 16.3205 22.5923 16.2428 22.5457L12 20L7.75725 22.5457C7.52046 22.6877 7.21333 22.6109 7.07125 22.3742C7.02463 22.2964 7 22.2075 7 22.1169V15.2454C5.17107 13.7793 4 11.5264 4 9C4 4.58172 7.58172 1 12 1C16.4183 1 20 4.58172 20 9C20 11.5264 18.8289 13.7793 17 15.2454ZM12 15C15.3137 15 18 12.3137 18 9C18 5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9C6 12.3137 8.68629 15 12 15ZM12 13C9.79086 13 8 11.2091 8 9C8 6.79086 9.79086 5 12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13Z">
+                                                d="M17 15.2454V22.1169C17 22.393 16.7761 22.617 16.5 22.617C16.4094 22.617 16.3205 22.5923 16.2428 22.5457L12 20L7.75725 22.5457C7.52046 22.6877 7.21333 22.6109 7.07125 22.3742C7.02463 22.2964 7 22.2075 7 22.1169V15.2454C5.17107 13.7793 4 11.5264 4 9C4 4.58172 7.58172 1 12 1C16.4183 1 20 4.58172 20 9C20 11.5264 18.8289 13.7793 17 15.2454ZM9 16.4185V19.4676L12 17.6676L15 19.4676V16.4185C14.0736 16.7935 13.0609 17 12 17C10.9391 17 9.92643 16.7935 9 16.4185ZM12 15C15.3137 15 18 12.3137 18 9C18 5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9C6 12.3137 8.68629 15 12 15Z">
                                             </path>
                                         </svg>
                                         <span class="w-full h-6">

@@ -15,8 +15,10 @@ class PageController extends Controller
     public function dashboard()
     {
         $sekolah = Sekolah::all();
+        $year = TahunAjaran::orderBy('id', 'desc')->get();
+        $current_year = TahunAjaran::where('status', 1)->first();
 
-        return view('dashboard', compact('sekolah'));
+        return view('dashboard', compact('sekolah', 'year', 'current_year'));
     }
 
     public function profile()
