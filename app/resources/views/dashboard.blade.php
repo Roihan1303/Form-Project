@@ -40,7 +40,7 @@
                             @if (auth()->user()->sekolah_id == null)
                             @else
                                 <p class="text-white font-medium text-lg">
-                                    Tahun Ajaran 
+                                    Tahun Ajaran
                                     <span class="font-semibold">
                                         {{ $current_year->tahun }}
                                     </span>
@@ -59,16 +59,16 @@
                                     </path>
                                 </svg>
                                 <p class="font-semibold text-xl text-white">
-                                    28 Sekolah dan Madrasah
+                                    {{ $sekolah->count() }} Sekolah dan Madrasah
                                 </p>
                             </div>
                         @endif
                     </div>
                 </div>
                 @if (auth()->user()->sekolah_id == null)
-                    <!-- Admin Yayasan -->
+                    <!-- ADMIN YAYASAN -->
                     <div class="mx-auto flex md:flex-row gap-x-4 gap-y-4 flex-col my-2 py-3">
-                        <a href="{{ route('jenjang') }}"
+                        <a href="{{ route('sd') }}"
                             class="rounded-lg border border-slate-400 md:w-1/3 py-4 bg-gray-50 shadow-md hover:shadow-xl hover:bg-gray-100 duration-300">
                             <div class="px-4 py-6">
                                 <img class="w-full h-52" src="{{ asset('assets/img/Elementary.svg') }}" alt="">
@@ -76,7 +76,7 @@
                             <div class="px-10 py-3 space-y-2">
                                 <span
                                     class="bg-sky-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
-                                    24 Sekolah/Madrasah
+                                    {{ $sd->count() }} Sekolah/Madrasah
                                 </span>
                                 <p class="cursor-pointer hover:underline">
                                     Sekolah/Madrasah dengan Jenjang
@@ -92,12 +92,12 @@
                                     <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                            stroke-wid th="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                                     </svg>
                                 </p>
                             </div>
                         </a>
-                        <a href="{{ route('jenjang') }}"
+                        <a href="{{ route('smp') }}"
                             class="rounded-lg border border-slate-400 md:w-1/3 py-4 bg-gray-50 shadow-md hover:shadow-xl hover:bg-gray-100 duration-300">
                             <div class="px-4 py-6">
                                 <img class="w-full h-52" src="{{ asset('assets/img/Secondary.svg') }}" alt="">
@@ -105,7 +105,7 @@
                             <div class="px-10 py-3 space-y-2">
                                 <span
                                     class="bg-sky-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
-                                    24 Sekolah/Madrasah
+                                    {{ $smp->count() }} Sekolah/Madrasah
                                 </span>
                                 <p class="cursor-pointer hover:underline">
                                     Sekolah/Madrasah dengan Jenjang
@@ -126,7 +126,7 @@
                                 </p>
                             </div>
                         </a>
-                        <a href="{{ route('jenjang') }}"
+                        <a href="{{ route('sma') }}"
                             class="rounded-lg border border-slate-400 md:w-1/3 py-4 bg-gray-50 shadow-md hover:shadow-xl hover:bg-gray-100 duration-300">
                             <div class="px-4 py-6">
                                 <img class="w-full h-52" src="{{ asset('assets/img/HighSchool.svg') }}" alt="">
@@ -134,7 +134,7 @@
                             <div class="px-10 py-3 space-y-2">
                                 <span
                                     class="bg-sky-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
-                                    24 Sekolah/Madrasah
+                                    {{ $sma->count() }} Sekolah/Madrasah
                                 </span>
                                 <p class="cursor-pointer hover:underline">
                                     Sekolah/Madrasah dengan Jenjang
@@ -157,7 +157,7 @@
                         </a>
                     </div>
                 @else
-                    <!-- Admin Sekolah -->
+                    <!-- ADMIN SEKOLAH -->
                     <section>
                         <div class="w-full bg-white rounded-lg px-0 py-3">
                             <div class="mb-4 w-full">

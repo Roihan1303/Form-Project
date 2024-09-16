@@ -3,9 +3,9 @@
     <section class="bg-white rounded-lg">
         <div class="px-4 py-2 mx-auto max-w-2xl md:py-6 space-y-10">
             <!-- Alert -->
-            <div class="w-full bg-sky-100 mx-auto py-3 px-4 mb-5 rounded-lg">
+            <div class="w-full bg-red-100 mx-auto py-3 px-4 mb-5 rounded-lg">
                 <p class="font-medium text-lg text-red-600 text-center">
-                    *Data
+                    Data
                     <span class="text-nowrap">
                         {{ auth()->user()->sekolah->nama }}
                     </span>
@@ -215,7 +215,7 @@
                                             <label for="lk1" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Laki Laki
                                             </label>
-                                            <input type="number" name="lk1" id="lk1"
+                                            <input type="number" name="laki[]" id="lk1"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Laki Laki" required="">
                                         </div>
@@ -223,7 +223,7 @@
                                             <label for="pr1" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Perempuan
                                             </label>
-                                            <input type="number" name="pr1" id="pr1"
+                                            <input type="number" name="perempuan[]" id="pr1"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Perempuan" required="">
                                         </div>
@@ -239,7 +239,7 @@
                                             <label for="lk2" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Laki Laki
                                             </label>
-                                            <input type="number" name="lk2" id="lk2"
+                                            <input type="number" name="laki[]" id="lk2"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Laki Laki" required="">
                                         </div>
@@ -247,7 +247,7 @@
                                             <label for="pr2" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Perempuan
                                             </label>
-                                            <input type="number" name="pr2" id="pr2"
+                                            <input type="number" name="perempuan[]" id="pr2"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Perempuan" required="">
                                         </div>
@@ -263,7 +263,7 @@
                                             <label for="lk3" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Laki Laki
                                             </label>
-                                            <input type="number" name="lk3" id="lk3"
+                                            <input type="number" name="laki[]" id="lk3"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Laki Laki" required="">
                                         </div>
@@ -271,7 +271,7 @@
                                             <label for="pr3" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Perempuan
                                             </label>
-                                            <input type="number" name="pr3" id="pr3"
+                                            <input type="number" name="perempuan[]" id="pr3"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Perempuan" required="">
                                         </div>
@@ -287,7 +287,7 @@
                                             <label for="lk4" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Laki Laki
                                             </label>
-                                            <input type="number" name="lk4" id="lk4"
+                                            <input type="number" name="laki[]" id="lk4"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Laki Laki" required="">
                                         </div>
@@ -295,7 +295,7 @@
                                             <label for="pr4" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Perempuan
                                             </label>
-                                            <input type="number" name="pr4" id="pr4"
+                                            <input type="number" name="perempuan[]" id="pr4"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Perempuan" required="">
                                         </div>
@@ -311,7 +311,7 @@
                                             <label for="lk5" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Laki Laki
                                             </label>
-                                            <input type="number" name="lk5" id="lk5"
+                                            <input type="number" name="laki[]" id="lk5"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Laki Laki" required="">
                                         </div>
@@ -319,7 +319,7 @@
                                             <label for="pr5" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Perempuan
                                             </label>
-                                            <input type="number" name="pr5" id="pr5"
+                                            <input type="number" name="perempuan[]" id="pr5"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Perempuan" required="">
                                         </div>
@@ -335,7 +335,7 @@
                                             <label for="lk6" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Laki Laki
                                             </label>
-                                            <input type="number" name="lk6" id="lk6"
+                                            <input type="number" name="laki[]" id="lk6"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Laki Laki" required="">
                                         </div>
@@ -343,7 +343,7 @@
                                             <label for="pr6" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Perempuan
                                             </label>
-                                            <input type="number" name="pr6" id="pr6"
+                                            <input type="number" name="perempuan[]" id="pr6"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Perempuan" required="">
                                         </div>
@@ -360,7 +360,7 @@
                                             <label for="lk6" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Laki Laki
                                             </label>
-                                            <input type="number" name="lk6" id="lk6"
+                                            <input type="number" name="laki[]" id="lk6"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Laki Laki" required="">
                                         </div>
@@ -368,7 +368,7 @@
                                             <label for="pr6" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Perempuan
                                             </label>
-                                            <input type="number" name="pr6" id="pr6"
+                                            <input type="number" name="perempuan[]" id="pr6"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Perempuan" required="">
                                         </div>
@@ -384,7 +384,7 @@
                                             <label for="lk6" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Laki Laki
                                             </label>
-                                            <input type="number" name="lk6" id="lk6"
+                                            <input type="number" name="laki[]" id="lk6"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Laki Laki" required="">
                                         </div>
@@ -392,7 +392,7 @@
                                             <label for="pr6" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Perempuan
                                             </label>
-                                            <input type="number" name="pr6" id="pr6"
+                                            <input type="number" name="perempuan[]" id="pr6"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Perempuan" required="">
                                         </div>
@@ -408,7 +408,7 @@
                                             <label for="lk6" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Laki Laki
                                             </label>
-                                            <input type="number" name="lk6" id="lk6"
+                                            <input type="number" name="laki[]" id="lk6"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Laki Laki" required="">
                                         </div>
@@ -416,7 +416,7 @@
                                             <label for="pr6" class="block mb-2 text-sm font-medium text-gray-900">
                                                 Siswa Perempuan
                                             </label>
-                                            <input type="number" name="pr6" id="pr6"
+                                            <input type="number" name="perempuan[]" id="pr6"
                                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Jumlah Siswa Perempuan" required="">
                                         </div>

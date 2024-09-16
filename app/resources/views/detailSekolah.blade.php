@@ -24,9 +24,15 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="m1 9 4-4-4-4" />
                             </svg>
-                            <a href="{{ route('jenjang') }}"
+                            <a href="{{ route($jenjang) }}"
                                 class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
-                                SD/MI
+                                @if ($jenjang == 'sd')
+                                    SD/MI
+                                @elseif($jenjang == 'smp')
+                                    SMP/MTs
+                                @else
+                                    SMA/SMK/MAN
+                                @endif
                             </a>
                         </div>
                     </li>
@@ -38,7 +44,7 @@
                                     d="m1 9 4-4-4-4" />
                             </svg>
                             <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">
-                                SD Malang 1
+                                {{ $sekolah->nama }}
                             </span>
                         </div>
                     </li>
@@ -50,12 +56,12 @@
     <section>
         <div class="w-full bg-white rounded-lg px-4 py-3">
             <h2 class="font-semibold md:text-3xl md:ps-4 mb-4">
-                SD Malang 1
+                {{ $sekolah->nama }}
                 <span class="px-4">
                     -
                 </span>
                 <span class="">
-                    Akreditasi A
+                    Akreditasi {{ $detail->status_akreditasi }}
                 </span>
             </h2>
             <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
@@ -69,7 +75,7 @@
                             </path>
                         </svg>
                         <span class="w-full">
-                            JL HASANUDIN VIII NO 28 PESANGGRAHAN BATU KOTA BATU JAWA TIMUR
+                            {{ $sekolah->alamat }}
                         </span>
                     </div>
                     <div class="inline-flex px-4 py-3 gap-x-2" title="No Telepon Sekolah/Madrasah">
@@ -80,7 +86,7 @@
                             </path>
                         </svg>
                         <span class="w-full h-6">
-                            08249131842123
+                            {{ $sekolah->telepon }}
                         </span>
                     </div>
                     <div class="inline-flex px-4 py-3 gap-x-2" title="Tanggal Berdidi Sekolah/Madrasah">
@@ -91,7 +97,7 @@
                             </path>
                         </svg>
                         <span class="w-full h-6">
-                            12-12-2020
+                            {{ $sekolah->tanggal_berdiri }}
                         </span>
                     </div>
                     <div class="inline-flex px-4 py-3 gap-x-2" title="Kepala Sekolah/Madrasah">
@@ -102,7 +108,7 @@
                             </path>
                         </svg>
                         <span class="w-full h-6">
-                            Abah Zaidan Karim Aljaber
+                            {{ $detail->nama_kepala_sekolah }}
                         </span>
                     </div>
                     <div class="inline-flex px-4 py-3 gap-x-2" title="Jam Belajar Sekolah/Madrasah">
@@ -113,7 +119,7 @@
                             </path>
                         </svg>
                         <span class="w-full h-6">
-                            Pagi
+                            {{ $detail->waktu_belajar }}
                         </span>
                     </div>
                     <div class="inline-flex px-4 py-3 gap-x-2 items-center" title="Kurikulum Sekolah/Madrasah">
@@ -128,8 +134,8 @@
                                 class="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg flex">
                                 <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
                                     <div class="flex items-center ps-3">
-                                        <input id="horizontal-list-radio-license" type="radio" value="" checked
-                                            name="list-radio"
+                                        <input id="horizontal-list-radio-license" type="radio" value=""
+                                            name="list-radio" {{ $detail->kurikulum == 'K13' ? 'checked' : '' }} disabled
                                             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                         <label for="horizontal-list-radio-license"
                                             class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -140,7 +146,7 @@
                                 <li class="w-full dark:border-gray-600">
                                     <div class="flex items-center ps-3">
                                         <input id="horizontal-list-radio-passport" type="radio" value=""
-                                            name="list-radio"
+                                            name="list-radio" {{ $detail->kurikulum == 'IKM' ? 'checked' : '' }} disabled
                                             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                         <label for="horizontal-list-radio-passport"
                                             class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -162,7 +168,7 @@
                             </path>
                         </svg>
                         <span class="w-full">
-                            Yayasan Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, in.
+                            Yayasan {{ $sekolah->nama_yayasan }}
                         </span>
                     </div>
                     <div class="inline-flex px-4 py-3 gap-x-2" title="Kepala Yayasan Sekolah/Madrasah">
@@ -173,7 +179,7 @@
                             </path>
                         </svg>
                         <span class="w-full h-6">
-                            Abah Zaidan Karim Aljaber
+                            {{ $detail->nama_ketua_yayasan }}
                         </span>
                     </div>
                     <div class="inline-flex px-4 py-3 gap-x-2" title="Nomor Statisik Sekolah/Madrasah">
@@ -184,7 +190,7 @@
                             </path>
                         </svg>
                         <span class="w-full h-6">
-                            032543634 (NSS)
+                            {{ $sekolah->NSS }} (NSS)
                         </span>
                     </div>
                     <div class="inline-flex px-4 py-3 gap-x-2" title="Nomor Pokok Sekolah Nasional Sekolah/Madrasah">
@@ -195,7 +201,7 @@
                             </path>
                         </svg>
                         <span class="w-full h-6">
-                            112345263312496 (NPSN)
+                            {{ $sekolah->NPSN }} (NPSN)
                         </span>
                     </div>
                     <div class="inline-flex px-4 py-3 gap-x-2" title="Sertifikat BPHNU Sekolah/Madrasah">

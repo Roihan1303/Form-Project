@@ -3,22 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jenjang;
+use App\Models\ProfilSekolah;
 use App\Models\Sekolah;
 use App\Models\TahunAjaran;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    //
-
-
     public function dashboard()
     {
         $sekolah = Sekolah::all();
+
         $year = TahunAjaran::orderBy('id', 'desc')->get();
         $current_year = TahunAjaran::where('status', 1)->first();
 
-        return view('dashboard', compact('sekolah', 'year', 'current_year'));
+        $sd = Sekolah::where('jenjang_id', 1)->get();
+        $smp = Sekolah::where('jenjang_id', 2)->get();
+        $sma = Sekolah::where('jenjang_id', 3)->get();
+
+        return view('dashboard', compact('sekolah', 'year', 'current_year', 'sd', 'smp', 'sma'));
     }
 
     public function profile()
@@ -26,14 +29,32 @@ class PageController extends Controller
         return view('profile');
     }
 
-    public function byJenjang()
+    public function sekolah(Request $request)
     {
-        return view('byJenjang');
+        $jenjang = $request->route()->getName();
+
+        $sekolahList = [];
+
+        if ($jenjang == 'sd') {
+            $sekolahList = Sekolah::where('jenjang_id', 1)->get(); // SD
+        } elseif ($jenjang == 'smp') {
+            $sekolahList = Sekolah::where('jenjang_id', 2)->get(); // SMP
+        } elseif ($jenjang == 'sma') {
+            $sekolahList = Sekolah::where('jenjang_id', 3)->get(); // SMA
+        }
+
+        return view('listSekolah', compact('sekolahList', 'jenjang'));
     }
 
-    public function bySekolah()
+    public function detailSekolah($jenjang, $namaSekolah)
     {
-        return view('bySekolah');
+        $sekolah = Sekolah::where('nama', $namaSekolah)->first();
+        $detail = ProfilSekolah::where('sekolah_id', $sekolah->id)
+            ->whereHas('tahun_ajaran', function ($query) {
+                $query->where('status', 1);
+            })
+            ->first();
+        return view('detailSekolah', compact('sekolah', 'detail', 'jenjang'));
     }
 
     public function pendaftaranSekolah()
