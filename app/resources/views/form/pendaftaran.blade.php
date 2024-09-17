@@ -118,7 +118,7 @@
                         <label for="con_guru"
                             class="inline-flex items-center gap-x-2 mb-1 text-sm font-medium text-gray-900">
                             Generate Admin Sekolah/Madrasah
-                            <button type="button">
+                            <button type="button" id="generateButton">
                                 <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     fill="currentColor">
                                     <path
@@ -172,6 +172,31 @@
             noRadio.addEventListener('change', function() {
                 if (this.checked) {
                     uploadDiv.classList.add('hidden');
+                }
+            });
+
+            const generateBtn = document.getElementById('generateButton');
+            const schoolInput = document.getElementById('school');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+
+            generateBtn.addEventListener('click', function() {
+                let schoolName = schoolInput.value;
+
+                // Jika Nama Sekolah tidak kosong, lakukan proses generate
+                if (schoolName.trim() !== '') {
+                    // Hapus spasi dari nama sekolah
+                    let generatedUsername = schoolName.replace(/\s+/g, '').toLowerCase();
+
+                    // Masukkan hasil generate ke inputan username dan password
+                    usernameInput.value = generatedUsername;
+                    passwordInput.value = generatedUsername; // Misal tambahkan '123' di password
+                } else {
+                    Swal.fire({
+                        title: "Error",
+                        text: "Nama Sekolah/Madrasah harus diisi sebelum generate!",
+                        icon: "error",
+                    });
                 }
             });
         });
