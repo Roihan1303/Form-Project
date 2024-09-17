@@ -3,19 +3,21 @@
     <section class="bg-white rounded-lg">
         <div class="px-4 py-2 mx-auto max-w-2xl md:py-6 space-y-10">
             <!-- Alert -->
-            <div class="w-full bg-red-100 mx-auto py-3 px-4 mb-5 rounded-lg">
-                <p class="font-medium text-lg text-red-600 text-center">
-                    Data
-                    <span class="text-nowrap">
-                        {{ auth()->user()->sekolah->nama }}
-                    </span>
-                    Tahun Ajaran
-                    <span class="text-nowrap">
-                        {{ $year->tahun }}
-                    </span>
-                    telah dikumpulkan!
-                </p>
-            </div>
+            @if (!$profilSekolah)
+                <div class="w-full bg-red-100 mx-auto py-3 px-4 mb-5 rounded-lg">
+                    <p class="font-medium text-lg text-red-600 text-center">
+                        Data
+                        <span class="text-nowrap">
+                            {{ auth()->user()->sekolah->nama }}
+                        </span>
+                        Tahun Ajaran
+                        <span class="text-nowrap">
+                            {{ $year->tahun }}
+                        </span>
+                        telah dikumpulkan!
+                    </p>
+                </div>
+            @endif
             <!-- Form -->
             <h2 class="mb-4 text-xl font-bold text-gray-900">
                 Pendataan Sekolah/Madrasah
@@ -500,7 +502,9 @@
                     </div>
                 </div>
                 <button type="submit"
-                    class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                    @if (!$profilSekolah) class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-400 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900" disabled
+                @else
+                    class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800" @endif>
                     Submit
                 </button>
             </form>

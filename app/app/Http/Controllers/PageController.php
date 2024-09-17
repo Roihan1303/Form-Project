@@ -101,7 +101,11 @@ class PageController extends Controller
     public function pendataanSekolah()
     {
         $year = TahunAjaran::where('status', 1)->first();
-        return view('form.pendataan', compact('year'));
+        $profilSekolah = ProfilSekolah::where('sekolah_id', auth()->user()->sekolah->id)
+            ->where('tahun_ajaran_id', $year->id)
+            ->first();
+
+        return view('form.pendataan', compact('year', 'profilSekolah'));
     }
 
     public function tahunAjaran()
