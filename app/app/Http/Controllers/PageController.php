@@ -6,7 +6,9 @@ use App\Models\Jenjang;
 use App\Models\ProfilSekolah;
 use App\Models\Sekolah;
 use App\Models\TahunAjaran;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class PageController extends Controller
 {
@@ -50,6 +52,16 @@ class PageController extends Controller
     public function profile()
     {
         return view('profile');
+    }
+
+    public function updateProfile(Request $request, User $user)
+    {
+        $user->update([
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        return redirect()->route('profile')->with('success', 'Akun Berhasil Diubah');
     }
 
     public function sekolah(Request $request)

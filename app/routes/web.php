@@ -38,6 +38,7 @@ Route::get('pendataan-sekolah', [PageController::class, 'pendataanSekolah'])->na
 Route::get('tahun-ajaran', [PageController::class, 'tahunAjaran'])->name('tahun-ajaran');
 
 Route::get('profile-page', [PageController::class, 'profile'])->name('profile');
+Route::put('update-profile/{user}', [PageController::class, 'updateProfile'])->name('profile.update');
 
 Route::post('tahun-ajaran', [TahunAjaranController::class, 'insertTahun'])->name('tahunAjaran.insert');
 Route::post('set-tahun-ajaran/{tahun}', [TahunAjaranController::class, 'setStatus'])->name('tahunAjaran.setStatus');

@@ -3,9 +3,11 @@
     <section class="bg-white rounded-lg">
         <div class="max-w-2xl px-4 py-8 mx-auto lg:py-16">
             <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">
-                Halo user, edit akun anda disini!
+                Halo admin {{ auth()->user()->name }}, edit akun anda disini!
             </h2>
-            <form action="#">
+            <form action="{{ route('profile.update', ['user' => auth()->user()->id]) }}" method="POST">
+                @csrf
+                @method('PUT')
                 <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
                     <div class="sm:col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -13,7 +15,7 @@
                         </label>
                         <input type="text" name="name" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            value="SD Malang 1" placeholder="Nama Sekolah" readonly>
+                            value="{{ auth()->user()->name }}" placeholder="Nama Sekolah" readonly>
                     </div>
                     <div class="w-full">
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
