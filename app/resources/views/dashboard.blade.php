@@ -161,11 +161,12 @@
                     <section>
                         <div class="w-full bg-white rounded-lg px-0 py-3">
                             <div class="mb-4 w-full">
-                                <form action="" class="w-full mb-0">
+                                <form action="{{ route('dashboardPilihTahun') }}" method="POST" class="w-full mb-0">
+                                    @csrf
                                     <div class="flex flex-row gap-x-4 justify-start">
                                         <select id="" name="tahun_ajaran"
                                             class="bg-gray-50 border md:w-72 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                            <option selected>Pilih Tahun Ajaran</option>
+                                            <option disabled selected>Pilih Tahun Ajaran</option>
                                             @foreach ($year as $years)
                                                 <option value="{{ $years->id }}">{{ $years->tahun }}</option>
                                             @endforeach
@@ -188,7 +189,7 @@
                                             </path>
                                         </svg>
                                         <span class="w-full">
-                                            JL HASANUDIN VIII NO 28 PESANGGRAHAN BATU KOTA BATU JAWA TIMUR
+                                            {{ $sekolah->alamat }}
                                         </span>
                                     </div>
                                     <div class="inline-flex px-4 py-3 gap-x-2" title="No Telepon Sekolah/Madrasah">
@@ -199,7 +200,7 @@
                                             </path>
                                         </svg>
                                         <span class="w-full h-6">
-                                            08249131842123
+                                            {{ $sekolah->telepon }}
                                         </span>
                                     </div>
                                     <div class="inline-flex px-4 py-3 gap-x-2" title="Tanggal Berdidi Sekolah/Madrasah">
@@ -210,7 +211,7 @@
                                             </path>
                                         </svg>
                                         <span class="w-full h-6">
-                                            12-12-2020
+                                            {{ $sekolah->tanggal_berdiri }}
                                         </span>
                                     </div>
                                     <div class="inline-flex px-4 py-3 gap-x-2" title="Kepala Sekolah/Madrasah">
@@ -221,7 +222,7 @@
                                             </path>
                                         </svg>
                                         <span class="w-full h-6">
-                                            Abah Zaidan Karim Aljaber
+                                            {{ $detail->nama_kepala_sekolah }}
                                         </span>
                                     </div>
                                     <div class="inline-flex px-4 py-3 gap-x-2" title="Akreditasi Sekolah/Madrasah">
@@ -232,7 +233,7 @@
                                             </path>
                                         </svg>
                                         <span class="w-full h-6">
-                                            Akreditasi A
+                                            Akreditasi {{ $detail->status_akreditasi }}
                                         </span>
                                     </div>
                                     <div class="inline-flex px-4 py-3 gap-x-2" title="Jam Belajar Sekolah/Madrasah">
@@ -243,7 +244,7 @@
                                             </path>
                                         </svg>
                                         <span class="w-full h-6">
-                                            Pagi
+                                            {{ $detail->waktu_belajar }}
                                         </span>
                                     </div>
                                     <div class="inline-flex px-4 py-3 gap-x-2 items-center"
@@ -261,7 +262,8 @@
                                                     class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
                                                     <div class="flex items-center ps-3">
                                                         <input id="horizontal-list-radio-license" type="radio"
-                                                            value="" checked name="list-radio"
+                                                            value="" name="list-radio"
+                                                            {{ $detail->kurikulum == 'K13' ? 'checked' : '' }} disabled
                                                             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                                         <label for="horizontal-list-radio-license"
                                                             class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -273,6 +275,7 @@
                                                     <div class="flex items-center ps-3">
                                                         <input id="horizontal-list-radio-passport" type="radio"
                                                             value="" name="list-radio"
+                                                            {{ $detail->kurikulum == 'IKM' ? 'checked' : '' }} disabled
                                                             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                                         <label for="horizontal-list-radio-passport"
                                                             class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -294,7 +297,7 @@
                                             </path>
                                         </svg>
                                         <span class="w-full">
-                                            Yayasan Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, in.
+                                            Yayasan {{ $sekolah->nama_yayasan }}
                                         </span>
                                     </div>
                                     <div class="inline-flex px-4 py-3 gap-x-2" title="Kepala Yayasan Sekolah/Madrasah">
@@ -305,7 +308,7 @@
                                             </path>
                                         </svg>
                                         <span class="w-full h-6">
-                                            Abah Zaidan Karim Aljaber
+                                            {{ $detail->nama_ketua_yayasan }}
                                         </span>
                                     </div>
                                     <div class="inline-flex px-4 py-3 gap-x-2" title="Nomor Statisik Sekolah/Madrasah">
@@ -316,7 +319,7 @@
                                             </path>
                                         </svg>
                                         <span class="w-full h-6">
-                                            032543634 (NSS)
+                                            {{ $sekolah->NSS }} (NSS)
                                         </span>
                                     </div>
                                     <div class="inline-flex px-4 py-3 gap-x-2"
@@ -328,7 +331,7 @@
                                             </path>
                                         </svg>
                                         <span class="w-full h-6">
-                                            112345263312496 (NPSN)
+                                            {{ $sekolah->NPSN }} (NPSN)
                                         </span>
                                     </div>
                                     <div class="inline-flex px-4 py-3 gap-x-2" title="Sertifikat BPHNU Sekolah/Madrasah">

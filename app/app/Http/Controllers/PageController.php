@@ -21,7 +21,30 @@ class PageController extends Controller
         $smp = Sekolah::where('jenjang_id', 2)->get();
         $sma = Sekolah::where('jenjang_id', 3)->get();
 
+        if (auth()->user()->sekolah_id != null) {
+            $sekolah = Sekolah::findOrFail(auth()->user()->sekolah_id);
+            $detail = ProfilSekolah::where('sekolah_id', $sekolah->id)
+                ->whereHas('tahun_ajaran', function ($query) {
+                    $query->where('status', 1);
+                })
+                ->first();
+            return view('dashboard', compact('sekolah', 'detail', 'year', 'current_year'));
+        }
+
         return view('dashboard', compact('sekolah', 'year', 'current_year', 'sd', 'smp', 'sma'));
+    }
+
+    public function dashboardPilihTahun(Request $request)
+    {
+        $year = TahunAjaran::orderBy('id', 'desc')->get();
+        $current_year = TahunAjaran::where('status', 1)->first();
+
+        $sekolah = Sekolah::findOrFail(auth()->user()->sekolah_id);
+        $detail = ProfilSekolah::where('sekolah_id', $sekolah->id)->where('tahun_ajaran_id', $request->tahun_ajaran)->first();
+        if ($detail == null) {
+            return redirect()->route('dashboard')->with('error', 'Data Pada Tahun Ajaran Belum Diinputkan');
+        }
+        return view('dashboard', compact('sekolah', 'year', 'current_year', 'detail'));
     }
 
     public function profile()
