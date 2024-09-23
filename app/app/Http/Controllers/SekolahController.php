@@ -44,7 +44,7 @@ class SekolahController extends Controller
             'sekolah_id' => $sekolah->id
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Update Berhasil!');
     }
 
     public function pendataanSekolah(Request $request)
@@ -96,6 +96,6 @@ class SekolahController extends Controller
             ]);
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Update Berhasil!');
     }
 }

@@ -30,6 +30,7 @@ class PageController extends Controller
                     $query->where('status', 1);
                 })
                 ->first();
+                // dd($detail);
             return view('dashboard', compact('sekolah', 'detail', 'year', 'current_year'));
         }
 
@@ -104,6 +105,7 @@ class PageController extends Controller
         $profilSekolah = ProfilSekolah::where('sekolah_id', auth()->user()->sekolah->id)
             ->where('tahun_ajaran_id', $year->id)
             ->first();
+            // dd($profilSekolah);
 
         return view('form.pendataan', compact('year', 'profilSekolah'));
     }
