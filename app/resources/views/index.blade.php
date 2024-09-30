@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>Form Project</title>
+    <link href="{{ asset('assets/img/logo_maarif.png') }}" rel="icon">
+
 </head>
 
 <body style="font-family: 'Plus Jakarta Sans', sans-serif;">
