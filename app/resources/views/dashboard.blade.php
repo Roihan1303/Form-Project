@@ -4,9 +4,9 @@
         <div class="bg-white rounded-xl p-4 space-y-4">
             <!-- Search Bar -->
             @if (auth()->user()->sekolah_id == null)
-                <div>
-                    <form class="mx-auto">
-                        <label for="default-search"
+                <div class="relative">
+                    <form class="mx-auto mb-0.5">
+                        <label for="school-search"
                             class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -16,13 +16,15 @@
                                         stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                 </svg>
                             </div>
-                            <input type="search" id="default-search"
+                            <input type="search" id="school-search"
                                 class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Cari Nama Sekolah/Madrasah..." required />
                             <button type="submit"
                                 class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                         </div>
                     </form>
+                    <!-- Floating Result Container -->
+                    <div id="search-results" class="absolute w-full z-10 bg-gray-100"></div>
                 </div>
             @endif
             <!-- Content -->
@@ -974,4 +976,99 @@
             </div>
         </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- searcher -->
+    <script>
+        document.getElementById('school-search').addEventListener('keyup', function() {
+
+            var searchQuery = this.value.trim();
+            // console.log(searchQuery);
+            var resultsContainer = document.getElementById('search-results');
+
+            // console.log(searchQuery.length);
+
+            fetch('/search-by-name', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}' // Laravel CSRF token
+                    },
+                    body: JSON.stringify({
+                        query: searchQuery
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Kosongkan kontainer hasil
+                    resultsContainer.innerHTML = '';
+
+                    if (data.length > 0) {
+
+                        data.forEach(function(item) {
+                            var resultItem = document.createElement('div');
+                            resultItem.classList.add('px-3', 'py-2', 'border', 'border-gray-300',
+                                'rounded-lg', 'bg-gray-50',
+                                'm-2', 'shadow-md', 'hover:shadow-lg');
+
+                            resultItem.setAttribute('data-sekolah-id', item.id);
+                            resultItem.setAttribute('data-sekolah-nama', item.nama);
+                            resultItem.setAttribute('data-jenjang-id', item.jenjang_id);
+                            // var idj = this.getAttribute('data-jenjang-id');
+                            if (item.jenjang_id == 1) {
+                                var jname = 'sd';
+                                resultItem.setAttribute('data-jenjang-nama', jname);
+                            } else if (item.jenjang_id == 2) {
+                                var jname = 'smp';
+                                resultItem.setAttribute('data-jenjang-nama', jname);
+                            } else if (item.jenjang_id == 3) {
+                                var jname = 'sma';
+                                resultItem.setAttribute('data-jenjang-nama', jname);
+                            }
+                            
+                            resultItem.classList.add('cursor-pointer');
+
+                            var name = document.createElement('div');
+                            name.textContent = item.nama;
+                            name.classList.add('font-normal', 'text-gray-900');
+
+                            resultItem.appendChild(name);
+
+                            resultsContainer.appendChild(resultItem);
+
+                        });
+
+                        var selected = resultsContainer.querySelectorAll('div[data-sekolah-id]');
+                        selected.forEach(function(items) {
+                            items.addEventListener('click', function() {
+                                var ids = this.getAttribute('data-sekolah-id');
+                                var nama = this.getAttribute('data-sekolah-nama');
+                                var id_jenjang = this.getAttribute('data-jenjang-id');
+                                var nama_jenjang = this.getAttribute('data-jenjang-nama');
+
+                                window.location.href = nama_jenjang + '/' + nama;
+                            });
+                        });
+                    } else {
+                        // console.log('kosong');
+                        if (searchQuery.length == 0) {
+                            // console.log('query kosong');
+                            resultsContainer.textContent = '';
+                            return;
+                        } else {
+                            // Lakukan pencarian dengan AJAX (contoh dengan fetch API)
+                            resultsContainer.textContent = 'No results found';
+                            // console.log('noname');
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching search results:', error);
+                    resultsContainer.textContent = 'An error occurred while searching.';
+                });
+
+
+        });
+    </script>
 @endsection

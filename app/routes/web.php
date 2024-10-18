@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SekolahController;
 use App\Http\Controllers\TahunAjaranController;
 use Illuminate\Support\Facades\Route;
@@ -45,3 +46,6 @@ Route::post('set-tahun-ajaran/{tahun}', [TahunAjaranController::class, 'setStatu
 
 Route::post('pendaftaran-sekolah', [SekolahController::class, 'pendaftaranSekolah'])->name('pendaftaranSekolah.create');
 Route::post('pendataan-sekolah', [SekolahController::class, 'pendataanSekolah'])->name('pendataanSekolah.create');
+
+// search
+Route::post('search-by-name', [SearchController::class, 'searcher'])->name('searcher');

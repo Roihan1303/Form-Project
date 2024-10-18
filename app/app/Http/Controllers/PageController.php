@@ -90,6 +90,7 @@ class PageController extends Controller
                 $query->where('status', 1);
             })
             ->first();
+            // dd($sekolah);
         return view('detailSekolah', compact('sekolah', 'detail', 'jenjang'));
     }
 
